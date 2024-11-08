@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: batch-demo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/demo
+    username: demo
+    password: demo
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-test-query: select 1 from dual
+      maximum-pool-size: 5
+      idle-timeout: 30000
+  batch:
+    job:
+      enabled: false
+    jdbc:
+      initialize-schema: never
+mybatis:
+  check-config-location: true
+  config-location: mybatis.xml
+
+logging:
+  level:
+    root: info
+    '[com.example.batch.demo]': debug

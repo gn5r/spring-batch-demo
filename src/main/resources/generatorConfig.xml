@@ -1,0 +1,43 @@
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="simple" targetRuntime="MyBatis3">
+    <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+    <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+    <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin" />
+    <!-- マッパxmlファイルを生成時に上書きするためのプラグイン -->
+    <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+
+    <commentGenerator>
+      <property name="suppressDate" value="true" />
+      <property name="addRemarkComments" value="true" />
+    </commentGenerator>
+
+    <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+      connectionURL="jdbc:mysql://mysql:3306/demo"
+      userId="demo"
+      password="demo">
+      <property name="nullCatalogMeansCurrent" value="true" />
+    </jdbcConnection>
+
+    <javaTypeResolver>
+      <property name="useJSR310Types" value="true" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.example.batch.demo.mybatis.entity"
+      targetProject="src/main/java">
+      <property name="enableSubPackages" value="false" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="com.example.batch.demo.mybatis.mapper"
+      targetProject="src/main/resources" />
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.batch.demo.mybatis.mapper"
+      targetProject="src/main/java">
+      <property name="enableSubPackages" value="false" />
+    </javaClientGenerator>
+
+    <table schema="demo" tableName="%" />
+  </context>
+</generatorConfiguration>

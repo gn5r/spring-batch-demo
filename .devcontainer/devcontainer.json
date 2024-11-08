@@ -1,0 +1,68 @@
+{
+  "name": "spring-batch-demo",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installGradle": "false",
+      "installMaven": "true"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "shengchen.vscode-checkstyle",
+        "vmware.vscode-boot-dev-pack",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml",
+        "formulahendry.auto-complete-tag"
+      ],
+      "settings": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.renderWhitespace": "all",
+        "editor.suggestSelection": "first",
+        "editor.tabSize": 2,
+        "files.autoGuessEncoding": true,
+        "files.eol": "\n",
+        "files.exclude": {
+          "**/.classpath": false,
+          "**/.project": false,
+          "**/.settings": false,
+          "**/.factorypath": false,
+          "**/.git": false
+        },
+        "java.completion.favoriteStaticMembers": [
+          "org.junit.Assert.*",
+          "org.junit.Assume.*",
+          "org.junit.jupiter.api.Assertions.*",
+          "org.junit.jupiter.api.Assumptions.*",
+          "org.junit.jupiter.api.DynamicContainer.*",
+          "org.junit.jupiter.api.DynamicTest.*",
+          "org.mockito.Mockito.*",
+          "org.mockito.ArgumentMatchers.*",
+          "org.mockito.Answers.*",
+          "org.assertj.core.api.Assertions.*"
+        ],
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+        "java.format.settings.profile": "GoogleStyle",
+        "java.maven.downloadSources": true,
+        "java.maven.updateSnapshots": true,
+        "[java]": {
+          "editor.defaultFormatter": "redhat.java"
+        },
+        "[xml]": {
+          "editor.defaultFormatter": "redhat.vscode-xml"
+        },
+        "[yaml]": {
+          "editor.defaultFormatter": "redhat.vscode-yaml"
+        }
+      }
+    }
+  }
+}
